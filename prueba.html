@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>createMediaStreamDestination() demo</title>
+	     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+	
+  </head>
+  <body>
+    <!--h1>createMediaStreamDestination() demo</h1>
+
+    <p>Encoding a pure sine wave to an Opus file </p>
+    <button>Make sine wave</button-->
+	<button id="grabar">Grabar</button>
+	<button id="detener">Detener</button>
+
+	<!--video autoplay></video-->
+	<audio id="audiograbado" controls></audio>
+	
+	<canvas class="visualizer" width="640" height="100"></canvas> 
+	
+      <script src="prueba.js"></script>
+	<textarea id="algo"></textarea>
+    <script>
+	$(function(){
+		$("#grabar").click(function(){
+			iniciarGrabacion();
+		
+		});
+		$("#detener").click(function(){
+			terminarGrabacion();
+		
+		});
+	});
+	
+	/*
+     var b = document.querySelector("button");
+     var clicked = false;
+     var chunks = [];
+     var ac = new AudioContext();
+     var osc = ac.createOscillator();
+     var dest = ac.createMediaStreamDestination();
+     var mediaRecorder = new MediaRecorder(dest.stream);
+     osc.connect(dest);
+
+     b.addEventListener("click", function(e) {
+       if (!clicked) {
+           mediaRecorder.start();
+           osc.start(0);
+           e.target.innerHTML = "Stop recording";
+           clicked = true;
+         } else {
+           mediaRecorder.stop();
+           mediaRecorder.requestData();
+           osc.stop(0);
+           e.target.disabled = true;
+         }
+     });
+
+     mediaRecorder.ondataavailable = function(evt) {
+       // push each chunk (blobs) in an array
+       chunks.push(evt.data);
+     };
+
+     mediaRecorder.onstop = function(evt) {
+       // Make blob out of our blobs, and open it.
+       var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+       window.location.href = URL.createObjectURL(blob);
+     };
+	 
+	 */
+    </script>
+  </body>
+</html>
